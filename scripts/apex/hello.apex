@@ -5,16 +5,11 @@
 // You can also execute the entire file by running the command:
 //     SFDX: Execute Anonymous Apex with Editor Contents
 
-public static String checkEvenOdd(Integer a) {
-    a = 7;
-    String evenOdd = null;
-    Double fullResult = a / 2;
-    Integer roundResult = a / 2;
-    if (fullResult > roundResult) {
-        evenOdd = 'Odd';
+public static Integer sumUpToLimit(Integer intLimit) {
+    Integer sumTotal = null;
+    for (i = 0 ; i > intLimit ; i++){
+        sumTotal = i + sumTotal;
+        System.debug(sumTotal);
+     }
+    return sumTotal;
     }
-    if (fullResult == roundResult) {
-        evenOdd = 'Even';
-    }
-    return evenOdd;
-}
