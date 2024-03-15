@@ -58,7 +58,7 @@ public with sharing class FlowControlLoopsCollections {
      * @return The maximum of the two numbers, or null if either number is null.
      */
     public static Integer findMax(Integer num1, Integer num2) {
-        // Initialize largestNum as null
+        // Initialize largestNum as null 
         Integer largestNum = null;
         if (num1 >= num2){
             largestNum = num1;
@@ -79,7 +79,17 @@ public with sharing class FlowControlLoopsCollections {
      * @return A string indicating whether the number is "Positive", "Negative", or "Zero", or null if the number is null.
      */
     public static String checkNumber(Integer a) {
-        return null; // Replace null with the variable you used to store the result
+        String numberValue = null;
+        if (a > 0) {
+            numberValue = 'Positive';
+        }
+        if (a < 0) {
+            numberValue = 'Negative';
+        }
+        if (a == 0) {
+            numberValue = 'Zero';
+        }
+        return numberValue;
     }
 
     /**
