@@ -92,7 +92,7 @@ public with sharing class FlowControlLoopsCollections {
         return numberValue;
     }
 
-    /**
+    /**NEED TO FIX
      * Question 5
      * Checks if a number is even or odd.
      * If the number is null, return null.
@@ -101,7 +101,17 @@ public with sharing class FlowControlLoopsCollections {
      * @return A string indicating whether the number is "Even" or "Odd", or null if the number is null.
      */
     public static String checkEvenOdd(Integer a) {
-        return null; // Replace null with the variable you used to store the result
+        String evenOdd = null;
+        //I think the issue is with how it is calculating the double variable. I need to make sure this is giving a decimal. This code is in the apex files. try math.mod
+        Double fullResult = (double)a / 2;
+        Integer roundResult = a / 2;
+        if (fullResult > roundResult) {
+            evenOdd = 'Odd';
+        }
+        if (fullResult == roundResult) {
+            evenOdd = 'Even';
+        }
+        return evenOdd;
     }
 
     /**
@@ -112,7 +122,14 @@ public with sharing class FlowControlLoopsCollections {
      * @return A string indicating whether the input is "Empty", "Null", or "Contains Text".
      */
     public static String checkString(String a) {
-        return null; // Replace null with the variable you used to store the result
+        String evaluateText = 'Contains Text';
+        if (a == null){
+            evaluateText = 'Null';
+        }
+        if (a == ''){
+            evaluateText = 'Empty';
+        }
+        return evaluateText;
     }
 
     /**

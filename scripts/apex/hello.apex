@@ -5,6 +5,16 @@
 // You can also execute the entire file by running the command:
 //     SFDX: Execute Anonymous Apex with Editor Contents
 
-string tempvar = 'Enter_your_name_here';
-System.debug('Hello World!');
-System.debug('My name is ' + tempvar);
+public static String checkEvenOdd(Integer a) {
+    a = 7;
+    String evenOdd = null;
+    Double fullResult = a / 2;
+    Integer roundResult = a / 2;
+    if (fullResult > roundResult) {
+        evenOdd = 'Odd';
+    }
+    if (fullResult == roundResult) {
+        evenOdd = 'Even';
+    }
+    return evenOdd;
+}
