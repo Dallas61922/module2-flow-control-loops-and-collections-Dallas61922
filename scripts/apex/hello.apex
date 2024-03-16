@@ -4,11 +4,11 @@
 //     SFDX: Execute Anonymous Apex with Currently Selected Text
 // You can also execute the entire file by running the command:
 //     SFDX: Execute Anonymous Apex with Editor Contents
-public static String returnHelloWorld(3) {
-    String helloWorldThree = null;
-     for (Integer i = 0; i > 3; i++){
-        helloWorldThree += 'Hello World!; ';
-     }
-    return (helloWorldThree);
-}
-    System.debug(helloWorldThree);
+Set<String> createStringSet(List<String> inputList) {
+        // Create a new Set of strings
+    Set<String> stringSet = new Set<String>();
+        
+        //add strings to the set
+    stringSet.add(inputList);
+
+    System.debug (stringSet);
