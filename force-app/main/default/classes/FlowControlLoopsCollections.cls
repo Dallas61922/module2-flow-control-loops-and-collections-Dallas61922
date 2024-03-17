@@ -302,27 +302,41 @@ public with sharing class FlowControlLoopsCollections {
      * @param words The list of words to search.
      * @return The position of the word in the list as a string or -1 if the word was not found.
      */
+    //STILL NEED TO RUN TEST
     public static Integer findWordInList(String wordToFind, List<String> words) {
-        // The variable to store the index of the word
-
+        Integer wordIndex = -1;
+        Integer i = 0;
         // Loop through the list of words
             // If the current word is the word to find, exit the loop
-
-        return null; // Replace null with the variable you used to store the result
+            for (String individualWord : words) {
+                i = i + 1;
+                if (wordToFind == individualWord) {
+                    wordIndex = i;
+                    break;
+                }
+            }
+            return wordIndex;
     }
 
-    /**
+    /*
      * Question 17
      * Loop through the list of money and adds them up until it accumulates more than 40 and then stops counting.
      * The change values are in cents and the total is to be calculated in dollars.
      * Example: countMoney() should return 48.02
      * @return The total value in dollars, stopped at the point when it exceeds 40 dollars.
      */
-    public static Decimal countMoney() {
+    //DID NOT YET TEST
+     public static Decimal countMoney() {
         // The list of money in the wallet, represented in dollars and cents
+        Decimal currentTotal = 0;
         List<Decimal> moneyInWallet = new List<Decimal>{0.50, 10, 3.84, 24.60, 9.08, 50, 4.90}; //DO NOT CHANGE
-
-        return null; // Replace null with the variable you used to store the result
+            for (Decimal eachAmount : moneyInWallet){
+                currentTotal += eachAmount;
+                if (currentTotal > 40){
+                    break;
+                }
+            }
+        return currentTotal; // Replace null with the variable you used to store the result
     }
 
     /**
@@ -330,7 +344,7 @@ public with sharing class FlowControlLoopsCollections {
      * Create a map that has five key-value pairs to the map, where the keys are the names of fruits and the values are their quantities.
      * Example: addItemsToMap() should return "Apples => 5, Oranges => 10, Bananas => 15, Pears => 20, Grapes => 25"
      * @return The Map of fruits and their quantities.
-     */
+     
     public static Map<String, Integer> addItemsToMap() {
         // Initialize an empty Map
 
@@ -352,7 +366,7 @@ public with sharing class FlowControlLoopsCollections {
      * Resource: https://developer.salesforce.com/docs/atlas.en-us.apexref.meta/apexref/apex_methods_system_map.htm#apex_System_Map_get
      * @param employeeName The name of the employee.
      * @return The salary of the employee, or null if the employee is not found in the Map.
-     */
+     
     public static Integer getSalary(String employeeName) {
         // Initialize a Map
 
@@ -396,6 +410,7 @@ public with sharing class FlowControlLoopsCollections {
 
         // Return the list of high paid employees
         return null; // Replace null with the variable you used to store the result
+    
+    
     }
-
 }
