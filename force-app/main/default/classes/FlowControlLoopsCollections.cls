@@ -392,7 +392,7 @@ public with sharing class FlowControlLoopsCollections {
      * If it is, add the employee's name to a list of employees that is returned by the method.
      * Remember that a Map is a collection of key-value pairs. Key are a set of unique values, so you can't have duplicate keys. Values are a list of values, so you can have duplicate values.
      * Resource: https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/langCon_apex_loops_for_lists.htm
-     * Example: getHighPaidEmployees() should return ['Jane Smith', 'Alice Johnson']
+     * Example: getHighPaidEmployees() should return ['Jane Smith', 'Alice Johnson'].
      * @return A list of employee names who have a salary more than 55000.
      */
    
