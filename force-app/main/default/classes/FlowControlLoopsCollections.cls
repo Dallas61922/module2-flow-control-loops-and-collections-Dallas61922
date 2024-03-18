@@ -325,7 +325,7 @@ public with sharing class FlowControlLoopsCollections {
      * Example: countMoney() should return 48.02
      * @return The total value in dollars, stopped at the point when it exceeds 40 dollars.
      */
-    //DID NOT YET TEST
+    
      public static Decimal countMoney() {
         // The list of money in the wallet, represented in dollars and cents
         Decimal currentTotal = 0;
