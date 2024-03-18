@@ -343,19 +343,25 @@ public with sharing class FlowControlLoopsCollections {
      * Question 18
      * Create a map that has five key-value pairs to the map, where the keys are the names of fruits and the values are their quantities.
      * Example: addItemsToMap() should return "Apples => 5, Oranges => 10, Bananas => 15, Pears => 20, Grapes => 25"
-     * @return The Map of fruits and their quantities.
+     * @return The Map of fruits and their quantities.*/
      
     public static Map<String, Integer> addItemsToMap() {
         // Initialize an empty Map
-
+        Map<String, Integer> fruitTotals = new Map<String, Integer>();
         // Add key-value pairs to the Map
+        fruitTotals.put('Apples', 5);
+        fruitTotals.put('Oranges', 10);
+        fruitTotals.put('Bananas', 15);
+        fruitTotals.put('Pears', 20);
+        fruitTotals.put('Grapes', 25);
+
         // add Apples => 5
         // add Oranges => 10
         // add Bananas => 15
         // add Pears => 20
         // add Grapes => 25
 
-        return null; // Replace null with the variable you used to store the result
+        return fruitTotals; // Replace null with the variable you used to store the result
     }
 
     /**
@@ -365,22 +371,19 @@ public with sharing class FlowControlLoopsCollections {
      * Example: getSalary("John Doe") should return 50000
      * Resource: https://developer.salesforce.com/docs/atlas.en-us.apexref.meta/apexref/apex_methods_system_map.htm#apex_System_Map_get
      * @param employeeName The name of the employee.
-     * @return The salary of the employee, or null if the employee is not found in the Map.
+     * @return The salary of the employee, or null if the employee is not found in the Map.*/
      
     public static Integer getSalary(String employeeName) {
         // Initialize a Map
-
-        // Add key-value pairs to the Map
-        // add John Doe => 50000
-        // add Jane Smith => 60000
-        // add Sam Brown => 55000
-        // add Alice Johnson => 65000
-
-        // Get the salary of the employee
-
-        // Return the salary of the employee, or null if the employee is not found in the Map
-        return null; // Replace null with the variable you used to store the result
-    }
+        Map<String, Integer> employeeSalary = new Map<String, Integer>();
+        employeeSalary.put('John Doe', 50000);
+        employeeSalary.put('Jane Smith', 60000);
+        employeeSalary.put('Sam Brown', 55000);
+        employeeSalary.put('Alice Johnson', 65000);
+        Integer foundSalary = employeeSalary.get(employeeName);
+        return foundSalary;
+        }
+    
 
     /**
      * Question 20
@@ -392,25 +395,25 @@ public with sharing class FlowControlLoopsCollections {
      * Example: getHighPaidEmployees() should return ['Jane Smith', 'Alice Johnson']
      * @return A list of employee names who have a salary more than 55000.
      */
+   
     public static List<String> getHighPaidEmployees() {
         // Initialize a Map
         Map<String, Integer> employeeSalaries = new Map<String, Integer>();
-
-        // Add key-value pairs to the Map
-        // add John Doe => 50000
-        // add Jane Smith => 60000
-        // add Sam Brown => 55000
-        // add Alice Johnson => 65000
-
+        employeeSalaries.put('John Doe', 50000);
+        employeeSalaries.put('Jane Smith', 60000);
+        employeeSalaries.put('Sam Brown', 55000);
+        employeeSalaries.put('Alice Johnson', 65000);
         // Initialize a list to store the names of high paid employees
-
+        Integer individualSalary = null;
+        List<String> highPaidEmployees= new List<String>();
         // Iterate over the Map using a for loop
-            // Check if the salary of the employee is more than 55000
-                // Add the employee to the list of high paid employees
-
+        for(String employee : employeeSalaries.keySet()){
+            individualSalary = employeeSalaries.get(employee);
+            if (individualSalary > 55000){
+                highPaidEmployees.add(employee);
+            }
+        }
         // Return the list of high paid employees
-        return null; // Replace null with the variable you used to store the result
-    
-    
+        return highPaidEmployees;
+     } // Replace null with the variable you used to store the result
     }
-}
