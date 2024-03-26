@@ -58,17 +58,12 @@ public with sharing class FlowControlLoopsCollections {
      * @return The maximum of the two numbers, or null if either number is null.
      */
     public static Integer findMax(Integer num1, Integer num2) {
-        // Initialize largestNum as null 
-        Integer largestNum = null;
-        if (num1 >= num2){
-            largestNum = num1;
+        if (num1 == null || num2 == null){
+            return null;
+        } else {
+        return System.Math.max(num1, num2);
         }
-        if (num1 < num2) {
-            largestNum = num2;
-        }
-        return largestNum;
     }
-
 
     /**
      * Question 4
@@ -101,17 +96,10 @@ public with sharing class FlowControlLoopsCollections {
      * @return A string indicating whether the number is "Even" or "Odd", or null if the number is null.
      */
     public static String checkEvenOdd(Integer a) {
-        String evenOdd = null;
-        //I think the issue is with how it is calculating the double variable. I need to make sure this is giving a decimal. This code is in the apex files. try math.mod
-        Double fullResult = (double)a / 2;
-        Integer roundResult = a / 2;
-        if (fullResult > roundResult) {
-            evenOdd = 'Odd';
-        }
-        if (fullResult == roundResult) {
-            evenOdd = 'Even';
-        }
-        return evenOdd;
+        if(a == null){
+            return null;
+        } 
+        return Math.mod(a,2) == 0 ? 'Even' : 'Odd';
     }
 
     /**
@@ -199,11 +187,7 @@ public with sharing class FlowControlLoopsCollections {
      * @return The new string with the inputString repeated repeatCount times.
      */
     public static String repeatString(String inputString, Integer repeatCount) {
-        String resultingPhrase = inputString;
-        for (Integer i = 0; i < (repeatCount - 1); i++) {
-            resultingPhrase = resultingPhrase + '; ' + inputString;
-        }
-        return resultingPhrase;
+        return inputString.repeat('; ', repeatCount);
     }
 
     /**
@@ -213,15 +197,7 @@ public with sharing class FlowControlLoopsCollections {
      * @return A List of integers containing the numbers 1, 2, and 3.
      */
     public static List<Integer> createAndPopulateList() {
-        List<Integer>myNumbers = new List<Integer>();
-        // Create a new list of integers
-            // add 1
-            myNumbers.add (1);
-             // add 2
-            myNumbers.add (2);
-            // add 3
-            myNumbers.add (3);
-            return myNumbers;
+        return new List<Integer>{1, 2, 3};
     }
 
     /**
@@ -248,11 +224,12 @@ public with sharing class FlowControlLoopsCollections {
      */
     public static List<Integer> createIntegerList(Integer n) {
         // Create a new list of integers 
+        Integer i = 1;
         List<Integer> listOfNumbers = new List<Integer>();
-        for(Integer i = 0; i < n; i++) {
-            //add integer to the list
-            listOfNumbers.add(i + 1);
-        } 
+        while (i < n){
+            i++;
+            listOfNumbers.add(i);
+        }
         return listOfNumbers; // Replace null with the variable you used to store the result
     }
 
@@ -267,7 +244,6 @@ public with sharing class FlowControlLoopsCollections {
     public static Set<String> createStringSet(List<String> inputList) {
         // Create a new Set of strings
         Set<String> stringSet = new Set<String>();
-        //add strings to the set
         for (String individualValue : inputList){
             stringSet.add(individualValue);
         }
